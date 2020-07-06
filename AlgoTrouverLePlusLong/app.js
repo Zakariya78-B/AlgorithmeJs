@@ -9,9 +9,27 @@ function trouverLongueurMax(str){
         }
     }
 return long;*/
-let bob = zak.reduce(Math.max(zak));
-return bob;
+
+
+
+    if(zak.length === 1){
+        return zak[0];
+    }
+
+    if(zak[0].length >= zak[1].length){
+
+        zak.splice(1,1);
+        return trouverLongueurMax(zak.join(' '));
+    }
+
+    if(zak[0].length <= zak[1].length){
+  
+        return trouverLongueurMax(zak.slice(1).join(' '));
+
+    }
+
 }
+
 
 console.log(trouverLongueurMax("Du sublime au ridicule il n'y a qu'un pas."));
 
